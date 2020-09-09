@@ -31,6 +31,7 @@ parseApps.forEach((parseApp) => {
 
   app.use(`/parse`, parseServer.app);
   parseGraphQLServer.applyGraphQL(app); // Mounts the GraphQL API.
+  parseGraphQLServer.applyPlayground(app);
 });
 
 app.listen(app.get('port'), () => {
